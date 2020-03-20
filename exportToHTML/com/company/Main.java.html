@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">javax.swing.*</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.awt.*</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.awt.event.ActionEvent</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.awt.event.ActionListener</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Random</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s0">extends </span><span class="s1">JFrame </span><span class="s0">implements </span><span class="s1">ActionListener {</span>
+
+    <span class="s1">JButton bOtworzSkrzynie</span><span class="s0">;</span>
+    <span class="s1">JLabel lZawartoscSkrzyni</span><span class="s0">;</span>
+
+    <span class="s0">public </span><span class="s1">Main(){</span>
+
+        <span class="s1">setSize(</span><span class="s2">300</span><span class="s0">, </span><span class="s2">200</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">setTitle(</span><span class="s3">&quot;THE GAME&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">setLayout(</span><span class="s0">null</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">JButton bOtworzSkrzynie = </span><span class="s0">new </span><span class="s1">JButton(</span><span class="s3">&quot;Otwórz skrzynię&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">bOtworzSkrzynie.setBounds(</span><span class="s2">500</span><span class="s0">,</span><span class="s2">400</span><span class="s0">,</span><span class="s2">300</span><span class="s0">,</span><span class="s2">120</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">add(bOtworzSkrzynie)</span><span class="s0">;</span>
+        <span class="s1">bOtworzSkrzynie.addActionListener(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">lZawartoscSkrzyni = </span><span class="s0">new </span><span class="s1">JLabel(</span><span class="s3">&quot;Prawdopodobieństwo wystąpienia przedmiotu jest następujące: 50% Konsumpcyje , 40% Normalne, 5% Rzadkie, 3% Unikatowe, 2% Epickie&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">lZawartoscSkrzyni.setBounds(</span><span class="s2">400</span><span class="s0">,</span><span class="s2">200</span><span class="s0">,</span><span class="s2">1000</span><span class="s0">,</span><span class="s2">20</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">lZawartoscSkrzyni.setForeground(</span><span class="s0">new </span><span class="s1">Color(</span><span class="s2">20</span><span class="s0">,</span><span class="s2">100</span><span class="s0">,</span><span class="s2">200</span><span class="s1">))</span><span class="s0">;</span>
+        <span class="s1">add(lZawartoscSkrzyni)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+
+        <span class="s1">Main okienko = </span><span class="s0">new </span><span class="s1">Main()</span><span class="s0">;</span>
+        <span class="s1">okienko.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)</span><span class="s0">;</span>
+        <span class="s1">okienko.setVisible(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span>
+
+
+
+        <span class="s4">/*Random r = new Random(); 
+        int firstRoll = r.nextInt(101); 
+        int secondRoll = r.nextInt (101); 
+        int thirdRoll = r.nextInt (101); 
+        System.out.println(&quot;Prawdopodobieństwo wystąpienia przedmiotu jest następujące: 50% Konsumpcyje , 40% Normalne, 5% Rzadkie, 3% Unikatowe, 2% Epickie.&quot;); 
+        System.out.println(firstRoll + &quot;% losowanie kategorii przedmiotu&quot;); 
+        System.out.println(secondRoll + &quot;% losowanie stopnia rzadkości przedmiotu i podgrupy&quot;); 
+        System.out.println(thirdRoll + &quot;% losowanie rodzaju przedmiotu&quot;); 
+        System.out.println(categoryRoll(firstRoll, secondRoll, thirdRoll));*/</span>
+    <span class="s1">}</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">actionPerformed(ActionEvent e){</span>
+        <span class="s1">Random r = </span><span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">firstRoll = r.nextInt(</span><span class="s2">101</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">secondRoll = r.nextInt (</span><span class="s2">101</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">thirdRoll = r.nextInt (</span><span class="s2">101</span><span class="s1">)</span><span class="s0">;</span>
+<span class="s4">/*      System.out.println(&quot;Prawdopodobieństwo wystąpienia przedmiotu jest następujące: 50% Konsumpcyje , 40% Normalne, 5% Rzadkie, 3% Unikatowe, 2% Epickie.&quot;); 
+        System.out.println(firstRoll + &quot;% losowanie kategorii przedmiotu&quot;); 
+        System.out.println(secondRoll + &quot;% losowanie stopnia rzadkości przedmiotu i podgrupy&quot;); 
+        System.out.println(thirdRoll + &quot;% losowanie rodzaju przedmiotu&quot;);*/</span>
+        <span class="s1">lZawartoscSkrzyni.setText(categoryRoll(firstRoll</span><span class="s0">, </span><span class="s1">secondRoll</span><span class="s0">, </span><span class="s1">thirdRoll))</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">public static </span><span class="s1">String categoryRoll (</span><span class="s0">int </span><span class="s1">firstRollNumber</span><span class="s0">, int </span><span class="s1">secondRollNumber</span><span class="s0">, int </span><span class="s1">thirdRollNumber) {</span>
+        <span class="s0">if </span><span class="s1">(firstRollNumber &lt;= </span><span class="s2">50</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s1">consItem(secondRollNumber)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(firstRollNumber &lt;= </span><span class="s2">90</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s1">normalItemRoll(secondRollNumber</span><span class="s0">,</span><span class="s1">thirdRollNumber)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(firstRollNumber &lt;= </span><span class="s2">95</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s1">rareItemRoll(secondRollNumber</span><span class="s0">,</span><span class="s1">thirdRollNumber)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(firstRollNumber &lt;= </span><span class="s2">98</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s1">uniqueItemRoll(secondRollNumber</span><span class="s0">,</span><span class="s1">thirdRollNumber)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s1">epicItemRoll(secondRollNumber</span><span class="s0">,</span><span class="s1">thirdRollNumber)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String consItem (</span><span class="s0">int </span><span class="s1">consRoll) {</span>
+        <span class="s0">if </span><span class="s1">(consRoll &lt;= </span><span class="s2">8</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;HP potion&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">16</span><span class="s1">){</span>
+            <span class="s0">return </span><span class="s3">&quot;MP Potion&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">24</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Sapphire&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">32</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Emerald&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">40</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Diamond&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">48</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Alkohol&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">56</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Fireworks&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">64</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;10 000 gold&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">72</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Chest&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">80</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Knight Cape&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">86</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Wizard Cape&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">91</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Archery Cape&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">96</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Horse Mount&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(consRoll &lt;= </span><span class="s2">98</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Dragon Pet&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Pheonix Pet&quot;</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String normalItemRoll (</span><span class="s0">int </span><span class="s1">grupRoll</span><span class="s0">, int </span><span class="s1">itemRoll) {</span>
+        <span class="s0">if </span><span class="s1">(grupRoll &lt;= </span><span class="s2">20</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Normal &quot; </span><span class="s1">+ jewelleryRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(grupRoll &lt;= </span><span class="s2">40</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Normal &quot; </span><span class="s1">+ weaponRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(grupRoll &lt;= </span><span class="s2">60</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Normal &quot; </span><span class="s1">+ armorRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(grupRoll &lt;= </span><span class="s2">80</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Normal &quot; </span><span class="s1">+ helmetRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Normal &quot; </span><span class="s1">+ bootsRoll(itemRoll)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String rareItemRoll (</span><span class="s0">int </span><span class="s1">rareRoll</span><span class="s0">, int </span><span class="s1">itemRoll) {</span>
+        <span class="s0">if </span><span class="s1">(rareRoll&lt;= </span><span class="s2">20</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Rare &quot; </span><span class="s1">+ jewelleryRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(rareRoll &lt;= </span><span class="s2">40</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Rare &quot; </span><span class="s1">+ weaponRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(rareRoll &lt;= </span><span class="s2">60</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Rare &quot; </span><span class="s1">+ armorRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(rareRoll &lt;= </span><span class="s2">80</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Rare &quot; </span><span class="s1">+ helmetRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Rare &quot; </span><span class="s1">+ bootsRoll(itemRoll)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String uniqueItemRoll (</span><span class="s0">int </span><span class="s1">uniqueRoll</span><span class="s0">, int </span><span class="s1">itemRoll) {</span>
+        <span class="s0">if </span><span class="s1">(uniqueRoll &lt;= </span><span class="s2">20</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Unique &quot; </span><span class="s1">+ jewelleryRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(uniqueRoll &lt;= </span><span class="s2">40</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Unique &quot; </span><span class="s1">+ weaponRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(uniqueRoll &lt;= </span><span class="s2">60</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Unique &quot; </span><span class="s1">+ armorRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(uniqueRoll &lt;= </span><span class="s2">80</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Unique &quot; </span><span class="s1">+ helmetRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Unique &quot; </span><span class="s1">+ bootsRoll(itemRoll)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String epicItemRoll (</span><span class="s0">int </span><span class="s1">epicRoll</span><span class="s0">, int </span><span class="s1">itemRoll) {</span>
+        <span class="s0">if </span><span class="s1">(epicRoll &lt;= </span><span class="s2">20</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Epic &quot; </span><span class="s1">+ jewelleryRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(epicRoll&lt;= </span><span class="s2">40</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Epic &quot; </span><span class="s1">+ weaponRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(epicRoll &lt;= </span><span class="s2">60</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Epic &quot; </span><span class="s1">+ armorRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(epicRoll &lt;= </span><span class="s2">80</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Epic &quot; </span><span class="s1">+ helmetRoll(itemRoll)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Epic &quot; </span><span class="s1">+ bootsRoll(itemRoll)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String jewelleryRoll (</span><span class="s0">int </span><span class="s1">jewelleryItem) {</span>
+        <span class="s0">if </span><span class="s1">(jewelleryItem &lt;=</span><span class="s2">50</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Ring&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Neckless&quot;</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String weaponRoll (</span><span class="s0">int </span><span class="s1">weaponItem) {</span>
+        <span class="s0">if </span><span class="s1">(weaponItem &lt;= </span><span class="s2">20</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Bow&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(weaponItem &lt;= </span><span class="s2">40</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Staff&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(weaponItem &lt;= </span><span class="s2">60</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;One handed sword&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(weaponItem &lt;= </span><span class="s2">80</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Shield&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Two handed mace&quot;</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String armorRoll (</span><span class="s0">int </span><span class="s1">armorItem) {</span>
+        <span class="s0">if </span><span class="s1">(armorItem &lt;= </span><span class="s2">34</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Cloth armor&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(armorItem &lt;= </span><span class="s2">67</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Leather armor&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Plate armor&quot;</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String helmetRoll (</span><span class="s0">int </span><span class="s1">helmetItem) {</span>
+        <span class="s0">if </span><span class="s1">(helmetItem &lt;= </span><span class="s2">33</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Cloth helmet&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(helmetItem &lt;= </span><span class="s2">67</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Leather helemet&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Plate helmet&quot;</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+    <span class="s0">public static </span><span class="s1">String bootsRoll (</span><span class="s0">int </span><span class="s1">bootsItem) {</span>
+        <span class="s0">if </span><span class="s1">(bootsItem &lt;= </span><span class="s2">33</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Cloth boots&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else if </span><span class="s1">(bootsItem &lt;= </span><span class="s2">66</span><span class="s1">) {</span>
+            <span class="s0">return </span><span class="s3">&quot;Leather boots&quot;</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else return </span><span class="s3">&quot;Plate boots&quot;</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
